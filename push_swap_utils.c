@@ -6,7 +6,7 @@
 /*   By: amarna <amarna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:21:44 by amarna            #+#    #+#             */
-/*   Updated: 2022/12/20 19:42:54 by amarna           ###   ########.fr       */
+/*   Updated: 2023/01/03 15:30:30 by amarna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ int	check_int(char *av)
 	if (av[i] == '-' || av[i] == '+')
 	{
 		if (!ft_isdigit(av[i + 1]))
-			return (0);
+			return (-1);
 		i++;
 	}
 	while (av[i])
 	{
 		if (!ft_isdigit(av[i]))
-			return (0);
+			return (-1);
 		i++;
 	}
 	return (1);
@@ -75,7 +75,7 @@ int	check_err(char **av)
 	while (av[i])
 	{
 		res = ft_atoi(av[i]);
-		if (check_int(av[i]) == 0 || av[i][0] == '\0')
+		if (check_int(av[i]) == -1 || av[i][0] == '\0')
 		{
 			write(1, "Error\n", 6);
 			exit(EXIT_FAILURE);

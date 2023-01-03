@@ -6,7 +6,7 @@
 /*   By: amarna <amarna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:21:51 by amarna            #+#    #+#             */
-/*   Updated: 2022/11/15 18:28:21 by amarna           ###   ########.fr       */
+/*   Updated: 2023/01/03 15:44:32 by amarna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,8 @@ void	sorting(t_list **stack_a, t_list **stack_b)
 	else if (ft_lstsize(*stack_a) == 5)
 		sort_for_5(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) > 5)
+	{
+		set_index(stack_a);
 		radix_sort(stack_a, stack_b);
+	}
 }

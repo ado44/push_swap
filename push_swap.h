@@ -25,6 +25,7 @@
 typedef struct s_list
 {
 	int				nb;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -48,8 +49,9 @@ int			reverse_rotate(t_list **stack);
 int			rra(t_list **a);
 int			rrb(t_list **b);
 int			rrr(t_list **a, t_list **b);
-int			get_max_bits(int max);
+
 int			already_sort(t_list **stack_a);
+void		simple_parse(t_list **stack);
 void		radix_sort(t_list **stack_a, t_list **stack_b);
 void		find_lowest_nb_4(t_list **stack);
 void		find_lowest_nb_5(t_list **stack);
@@ -61,11 +63,11 @@ void		sorting(t_list **stack_a, t_list **stack_b);
 int			check_int(char *av);
 int			check_err(char **av);
 t_list		*fill_stack(t_list *s, int i);
-void		print(t_list *s);
 void		ft_swap(int *a, int *b);
 int			err_msg(int a);
 void		free_stacks(t_list **a);
-void		replace_index(t_list *tmp);
 void		sort_tmp(t_list *tmp);
+void		set_index(t_list **stack_a);
+void		init_index(t_list *stack_a);
 
 #endif

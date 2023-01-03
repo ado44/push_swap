@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap-utils_2.c                                :+:      :+:    :+:   */
+/*   push_swap_utils_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarna <amarna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 17:52:30 by amarna            #+#    #+#             */
-/*   Updated: 2022/11/15 17:55:20 by amarna           ###   ########.fr       */
+/*   Updated: 2022/12/21 17:17:51 by amarna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ t_list	*fill_stack(t_list *s, int i)
 	t_list	*tmp;
 
 	tmp = (t_list *)malloc(sizeof(t_list));
+	if (!tmp)
+	{
+		write(2, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}
 	if (tmp)
 	{
 		tmp->nb = i;
