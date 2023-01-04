@@ -29,12 +29,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-long		ft_atol(const char *str);
-int			ft_atoi(const char *str);
-int			ft_lstsize(t_list *lst);
-int			ft_isdigit(int c);
-t_list		*ft_lstlast(t_list *lst);
-
 int			swap(t_list **stack);
 int			sa(t_list **a);
 int			sb(t_list **b);
@@ -51,23 +45,25 @@ int			rrb(t_list **b);
 int			rrr(t_list **a, t_list **b);
 
 int			already_sort(t_list **stack_a);
-void		simple_parse(t_list **stack);
 void		radix_sort(t_list **stack_a, t_list **stack_b);
-void		find_lowest_nb_4(t_list **stack);
-void		find_lowest_nb_5(t_list **stack);
 void		sort_for_2(t_list **stack_a);
 void		sort_for_3(t_list **stack_a);
 void		sort_for_4(t_list **stack_a, t_list **stack_b);
 void		sort_for_5(t_list **stack_a, t_list **stack_b);
 void		sorting(t_list **stack_a, t_list **stack_b);
+void		find_lowest_nb_4(t_list **stack);
+void		find_lowest_nb_5(t_list **stack);
 int			check_int(char *av);
 int			check_err(char **av);
-t_list		*fill_stack(t_list *s, int i);
-void		ft_swap(int *a, int *b);
 int			err_msg(int a);
+t_list		*fill_stack(t_list *s, int i);
 void		free_stacks(t_list **a);
-void		sort_tmp(t_list *tmp);
 void		set_index(t_list **stack_a);
 void		init_index(t_list *stack_a);
+long		ft_atol(const char *str);
+int			ft_atoi(const char *str);
+int			ft_lstsize(t_list *lst);
+int			ft_isdigit(int c);
+t_list		*ft_lstlast(t_list *lst);
 
 #endif
